@@ -2,12 +2,12 @@
 
 function appAutoload($Class) {
     $prefix_path = [
-        'App\Class\\' => ['class'],
-        'App\Lib\\' => ['class/lib']
+        'App\Class\\' => ['classes'],
+        'App\Lib\\' => ['classes/lib']
     ];
 
     $dir =  __DIR__ . '/';
-    $file = str_replace("\\", '/', $dir . "class/{$Class}.php");
+    $file = str_replace("\\", '/', $dir . "classes/{$Class}.php");
 
     if (file_exists($file)) {
         require_once $file;
